@@ -44,7 +44,7 @@ document.getElementById('gerar-pdf').addEventListener('click', function() {
     // Cabeçalhos da tabela
     doc.setFontSize(12);
     doc.text("Nº", 20, 65);
-    doc.text("Matrícula (RA)", 40, 65);
+    doc.text("Matrícula", 40, 65);
     doc.text("Nome", 120, 65);
 
     // Adiciona a lista de presenças
@@ -63,7 +63,7 @@ document.getElementById('gerar-pdf').addEventListener('click', function() {
     });
 
     // Salva o PDF
-    doc.save('lista_presenca.pdf');
+    doc.save('dad_lista.pdf');
 });
 
 function updateDateTime() {

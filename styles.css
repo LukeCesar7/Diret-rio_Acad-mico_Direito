@@ -1,13 +1,18 @@
+/* Body Styles */
 body {
-    /*Luquian: adicionando imagem de background */
+    /* Background */
     background-image: url("img/background.png");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    font-family: JetBrains Mono;
     background-color: #1e1e2d;
+
+    /* Font and Color */
+    font-family: 'JetBrains Mono', monospace;
     color: #ffffff;
+
+    /* Layout */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,19 +20,22 @@ body {
     margin: 0;
 }
 
+/* Container Styles */
 .container {
-    background-color: #422d21;
+    background-color: #9e0808;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 30px #9e0808;
     width: 430px;
     text-align: center;
 }
 
+/* Header Styles */
 h1, h2 {
     margin-bottom: 20px;
 }
 
+/* Label Styles */
 label {
     display: block;
     margin-bottom: 5px;
@@ -35,6 +43,7 @@ label {
     font-weight: bold;
 }
 
+/* Input Styles */
 input {
     width: 100%;
     padding: 10px;
@@ -45,9 +54,10 @@ input {
     box-sizing: border-box;
 }
 
+/* Button Styles */
 button {
-    font-family: JetBrains Mono;
-    background-color: #725c47;
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #41434d;
     color: #ffffff;
     padding: 10px 15px;
     border: none;
@@ -60,6 +70,7 @@ button:hover {
     background-color: #00bb10;
 }
 
+/* Datetime Styles */
 #datetime {
     margin-top: 20px;
     font-size: 12px;
