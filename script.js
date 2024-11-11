@@ -4,20 +4,22 @@ const presencas = [];
 document.getElementById('confirmar-presenca').addEventListener('click', function() {
     const ra = document.getElementById('ra').value;
     const codigo = document.getElementById('codigo').value;
+    const email = document.getElementById('email').value;
 
-    // Verifica se ambos os campos foram preenchidos
-    if (ra && codigo) {
+    // Verifica se o campo de nome foi preenchido (obrigatório)
+    if (codigo) {
         // Adiciona as informações ao array de presenças
-        presencas.push({ ra, codigo });
+        presencas.push({ ra, codigo, email });
 
         // Exibe uma mensagem de confirmação
-        alert(`Presença confirmada para RA: ${ra}`);
+        alert(`Presença confirmada para: ${codigo}`);
 
         // Limpa os campos de entrada
         document.getElementById('ra').value = '';
         document.getElementById('codigo').value = '';
+        document.getElementById('email').value = '';
     } else {
-        alert('Por favor, preencha todos os campos.');
+        alert('Por favor, preencha o campo de nome.');
     }
 });
 
@@ -32,7 +34,7 @@ document.getElementById('gerar-pdf').addEventListener('click', function() {
 
     // Título e informações do palestrante/tema
     doc.setFontSize(16);
-    doc.text("Lista de Participantes", 105, 20, null, null, 'center');
+    doc.text("Lista de Participantes", 105, 20, { align: 'center' });
     doc.setFontSize(12);
     doc.text(`Palestrante(s): ${professor}`, 20, 30);
     doc.text(`Tema(s): ${disciplina}`, 20, 40);
@@ -41,26 +43,40 @@ document.getElementById('gerar-pdf').addEventListener('click', function() {
     // Desenha a linha horizontal
     doc.line(20, 55, 190, 55);
 
-    // Cabeçalhos da tabela
-    doc.setFontSize(12);
-    doc.text("Nº", 20, 65);
-    doc.text("Matrícula", 40, 65);
-    doc.text("Nome", 120, 65);
+    // Verifica se há presenças
+    if (presencas.length === 0) {
+        doc.text("Nenhuma presença confirmada.", 20, 65);
+    } else {
+        // Cabeçalhos da tabela
+        doc.setFontSize(12);
+        doc.text("Nº", 20, 65);
+        doc.text("Matrícula", 40, 65);
+        doc.text("Nome", 80, 65);
+        doc.text("Email", 140, 65);
 
-    // Adiciona a lista de presenças
-    let yPosition = 75;
-    presencas.forEach((presenca, index) => {
-        doc.text(`${index + 1}`, 20, yPosition);
-        doc.text(presenca.ra, 40, yPosition);
-        doc.text(presenca.codigo, 120, yPosition);
-        yPosition += 10;
+        // Adiciona a lista de presenças
+        let yPosition = 75;
+        presencas.forEach((presenca, index) => {
+            doc.text(`${index + 1}`, 20, yPosition);
+            doc.text(presenca.ra || "-", 40, yPosition); // Exibe "-" se a matrícula estiver vazia
+            doc.text(presenca.codigo, 80, yPosition);
 
-        // Verifica se precisa criar uma nova página
-        if (yPosition > 280) {
-            doc.addPage();
-            yPosition = 20;
-        }
-    });
+            // Exibe o email se disponível
+            if (presenca.email) {
+                doc.text(presenca.email, 140, yPosition);
+            } else {
+                doc.text("-", 140, yPosition); // Exibe "-" se não houver email
+            }
+
+            yPosition += 10;
+
+            // Verifica se precisa criar uma nova página
+            if (yPosition > 280) {
+                doc.addPage();
+                yPosition = 20;
+            }
+        });
+    }
 
     // Salva o PDF
     doc.save('dad_lista.pdf');

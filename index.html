@@ -5,22 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmação de Presença</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-  </head>
 <body>
     <div class="container">
         <h1>Confirme sua Presença!</h1>
 
-        <label for="ra">Sua Matrícula </label>
+        <label for="ra">Sua Matrícula</label>
         <input type="text" id="ra" name="ra" placeholder="Digite sua matrícula...">
 
         <label for="codigo">Seu Nome</label>
         <input type="text" id="codigo" name="codigo" placeholder="Digite o seu nome...">
+
+        <label for="email">Seu Email</label>
+        <input type="email" id="email" name="email" placeholder="Digite o seu email...">
 
         <button id="confirmar-presenca">Confirmar Presença</button>
 
@@ -37,15 +36,7 @@
         <button id="gerar-pdf">Lista de Participantes/PDF</button>
 
         <div id="datetime"></div>
-        <!--Luquian: Adicionanando Footer; nome do grupo, desenvolvimento e Hiperlink -->
-        <footer class="footer">
-            <div class="footer-content">
-                <hr>
-                <h1>AUDITÓRIO </h1>
-                <p>MARCELO BATTISTELLA BUENO</p>
-                <p>Diretório Acadêmico de Direito</p>
-
-
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
