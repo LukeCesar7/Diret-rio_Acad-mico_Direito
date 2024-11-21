@@ -18,39 +18,47 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    overflow: hidden;
 }
 
 /* Container Styles */
 .container {
     background-color: #9e0808;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 30px #9e0808;
-    width: 430px;
+    padding: 15px; /* Reduzi o padding para 15px */
+    border-radius: 8px; /* Bordas um pouco mais suaves */
+    box-shadow: 0 0 25px rgba(158, 8, 8, 0.8); /* Sombra mais suave */
+    width: 400px; /* Reduzido para 300px */
+    max-width: 80%; /* Flexível para dispositivos menores */
     text-align: center;
+    transition: transform 0.3s ease-in-out;
+    box-sizing: border-box;
 }
 
 /* Header Styles */
 h1, h2 {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduzi a margem inferior */
+    font-size: 1.5em; /* Tamanho ajustado do texto */
 }
 
 /* Label Styles */
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px; /* Reduzi a margem inferior */
     text-align: left;
     font-weight: bold;
+    color: #e0e0e0; /* Um cinza claro para o texto */
 }
 
 /* Input Styles */
 input {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 8px; /* Reduzi o padding */
+    margin-bottom: 12px; /* Reduzi a margem inferior */
     border-radius: 5px;
     border: none;
     outline: none;
+    background-color: #3a3a4f;
+    color: #ffffff;
     box-sizing: border-box;
 }
 
@@ -59,20 +67,33 @@ button {
     font-family: 'JetBrains Mono', monospace;
     background-color: #41434d;
     color: #ffffff;
-    padding: 10px 15px;
+    padding: 10px; /* Ajustei o padding */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
     background-color: #00bb10;
+    transform: translateY(-2px);
 }
 
 /* Datetime Styles */
 #datetime {
-    margin-top: 20px;
+    margin-top: 15px; /* Reduzi a margem superior */
     font-size: 12px;
     color: #fffefd;
+}
+
+/* Media query para ajustar layout em telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Reduzindo padding para telas menores */
+    }
+
+    h1, h2 {
+        font-size: 1.3em; /* Ajustando o tamanho do texto */
+    }
 }
