@@ -17,8 +17,9 @@
 
      * Cadastro de Presentes;
        
-       - Adicionar membro: Nome e matrícula ( possibilidade de deixar em branco ).
+       - Adicionar membro: Nome, matrícula e email ( possibilidade de deixar em branco ).
        - Geração de PDF externo.
+       - Campo nome obrigatório
          
      * Versão de sistema offline;
        
