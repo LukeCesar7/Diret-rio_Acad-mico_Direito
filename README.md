@@ -24,7 +24,7 @@
      * Versão de sistema offline;
        
        - Download de PDF para fins de encaminhameto. 
-       - Objetivo de não depender da intranet deficitária da faculdade.
+       - Objetivo de não depender da intranet da faculdade.
          
 ### Como operar 
 
