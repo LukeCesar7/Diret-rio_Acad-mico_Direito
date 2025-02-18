@@ -3,6 +3,8 @@
 <h1 align="center"> Sistema de Cadastro | Diretório Acadêmico de Direito (UNIFG) </h1>
 <p align="center"> Marcela Lira | Pres.Diretório </p>
 
+<img src="https://github.com/LukeCesar7/Diretorio_Direito/blob/main/img/6529DE1D-C188-44BB-B340-70F581596D20_1_201_a.jpeg">
+
 ### Descrição
 
 <hr>
